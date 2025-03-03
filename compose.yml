@@ -6,7 +6,7 @@ services:
     container_name: cs2
     environment:
       # Server configuration
-      - SRCDS_TOKEN=19243C9FCF9573EF7C95AB78858498B2 # Game Server Token from https://steamcommunity.com/dev/managegameservers
+      - SRCDS_TOKEN= # Game Server Token from https://steamcommunity.com/dev/managegameservers
       - STEAMAPPVALIDATE=1 # (0 - no validation, 1 - enable validation)
       - CS2_SERVERNAME=MIX DA MACONHA # (Set the visible name for your private server)
       - CS2_CHEATS=0 # (0 - disable cheats, 1 - enable cheats)
