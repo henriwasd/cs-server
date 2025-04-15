@@ -3,15 +3,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: "1000:1000"
+    privileged: true
     container_name: cs2
     environment:
       # Server configuration
-      - SRCDS_TOKEN= # Game Server Token from https://steamcommunity.com/dev/managegameservers
-      - STEAMAPPVALIDATE=1 # (0 - no validation, 1 - enable validation)
-      - CS2_SERVERNAME=MIX DA MACONHA # (Set the visible name for your private server)
+      - SRCDS_TOKEN=746BDB877B151205DACC41B4882FF30E # Game Server Token from https://steamcommunity.com/dev/managegameservers
+      - STEAMAPPVALIDATE=0 # (0 - no validation, 1 - enable validation)
+      - CS2_SERVERNAME=[MIX !WS] Rebolando Lentinho # (Set the visible name for your private server)
       - CS2_CHEATS=0 # (0 - disable cheats, 1 - enable cheats)
       - CS2_PORT=27015 # (CS2 server listen port tcp_udp)
-      - CS2_SERVER_HIBERNATE=0 # (Put server in a low CPU state when there are no players. 0 - hibernation disabled, 1 - hibernation enabled)
+      - CS2_SERVER_HIBERNATE=1 # (Put server in a low CPU state when there are no players. 0 - hibernation disabled, 1 - hibernation enabled)
       - CS2_RCON_PORT # (Optional, use a simple TCP proxy to have RCON listen on an alternative port. Useful for services like AWS Fargate which do not support mixed protocol ports.)
       - CS2_LAN=0 # (0 - LAN mode disabled, 1 - LAN Mode enabled)
       - CS2_RCONPW=drogas # (RCON password)
@@ -33,8 +35,8 @@ services:
       - CS2_BOT_QUOTA=0 # (Number of bots)
       - CS2_BOT_QUOTA_MODE=competitive # (fill, competitive)
       # TV
-      - TV_AUTORECORD=1 # Automatically records all games as CSTV demos: 0=off, 1=on.
-      - TV_ENABLE=1 # Activates CSTV on server: 0=off, 1=on.
+      - TV_AUTORECORD=0 # Automatically records all games as CSTV demos: 0=off, 1=on.
+      - TV_ENABLE=0 # Activates CSTV on server: 0=off, 1=on.
       - TV_PORT=27020 # Host SourceTV port
       - TV_PW= # CSTV password for clients
       - TV_RELAY_PW= # CSTV password for relay proxies

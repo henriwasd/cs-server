@@ -4,7 +4,7 @@ CONTAINER_NAME="cs2"
 STEAMCMD_PATH="/home/steam/steamcmd/steamcmd.sh"
 CS2_DIR="/home/steam/cs2-dedicated"
 STEAM_USER="anonymous"
-GAMEINFO_PATH="~/cs2/game/csgo/gameinfo.gi"
+GAMEINFO_PATH="$HOME/cs-server/data-server/game/csgo/gameinfo.gi"
 
 docker exec -it $CONTAINER_NAME $STEAMCMD_PATH +force_install_dir $CS2_DIR +login $STEAM_USER +app_update 730 validate +exit
 
