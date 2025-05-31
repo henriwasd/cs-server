@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: rebolandolentinho-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rebolandolentinhO@123
+      MYSQL_DATABASE: rebolandolentinho
+      MYSQL_USER: rebolandolentinho
+      MYSQL_PASSWORD: rebolandolentinhO@123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
